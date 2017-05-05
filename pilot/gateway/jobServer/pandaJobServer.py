@@ -33,12 +33,12 @@ class PandaJobServer(DefaultJobServer):
 
         raise exception.NotImplemented(traceback.format_exc())
 
-    def update_job(self, data):
+    def update_jobs(self, data):
         """
-        Update job to the job server.
+        Update jobs to the job server.
 
-        param data: Dictionary for updating a job
-        exception: Fail to update a job
+        param data: List of dictionaries for updating a job
+        exception: Fail to update jobs
         """
 
         raise exception.NotImplemented(traceback.format_exc())

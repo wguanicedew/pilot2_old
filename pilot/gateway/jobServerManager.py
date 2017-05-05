@@ -28,7 +28,7 @@ class JobServerManager(object):
         """
 
         if not cls.__instance:
-            cls.__instance = super(JobServerFactory, cls).__new__(cls, *args, **kwargs)
+            cls.__instance = super(JobServerManager, cls).__new__(cls, *args, **kwargs)
             cls.__instance.create_job_server(*args, **kwargs)
 
         return cls.__instance
