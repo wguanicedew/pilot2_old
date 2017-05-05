@@ -8,7 +8,7 @@
 # - Wen Guan, wen.guan@cern.ch, 2017
 
 """
-A factory to generate instance to get site info.
+A manager to manage site info.
 """
 
 import traceback
