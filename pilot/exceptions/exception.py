@@ -11,6 +11,7 @@
 Exceptions in pilot
 """
 
+import traceback
 
 class PilotException(Exception):
     """
@@ -26,6 +27,7 @@ class PilotException(Exception):
         self.args = args
         self.kwargs = kwargs
         self._error_string = None
+        self._stack_trace = "%s" % traceback.format_exc()
 
     def __str__(self):
         try:
@@ -40,6 +42,7 @@ class PilotException(Exception):
             # Convert all arguments into their string representations...
             args = ["%s" % arg for arg in self.args if arg]
             self._error_string = (self._error_string + "\nDetails: %s" % '\n'.join(args))
+        self._error_string = self._error_string + "\nStacktrace: %s" % self._stack_trace
         return self._error_string.strip()
 
 
